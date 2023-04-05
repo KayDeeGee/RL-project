@@ -27,10 +27,8 @@ class TodoListController extends Controller
         $newListItem = new ListItem;
         $newListItem-> name = $request->description;
         $newListItem-> is_complete =0;
-        $newListItem-> start_Date = $request -> startDate;
-        $newListItem-> start_Time = $request -> startTime;
-        $newListItem-> end_Date = $request -> endDate;
-        $newListItem-> end_Time = $request -> endTime;
+        $newListItem-> end_date = $request -> endDate;
+        $newListItem-> end_time = $request -> endTime;
         $newListItem-> save();
 
         return response()->json(['message' => 'Task added successfully']);
@@ -40,7 +38,7 @@ class TodoListController extends Controller
         $ListItem = ListItem::find($id);
         $ListItem -> delete();
 
-        return redirect('/');
+        return response()->json(['message' => 'Task deleted successfully']);
     }
 
     public function crossItem($id) {
@@ -48,30 +46,33 @@ class TodoListController extends Controller
 
         $ListItem->is_complete = ($ListItem->is_complete == 1) ? 0 : 1;
         $ListItem -> save();
-        return redirect('/');
+        return response()->json([
+            'message' => 'Task updated successfully',
+            'task' => $ListItem
+        ]);
     }
 
-
-
-    public function updateItem(Request $request) {
-        $ListItem = ListItem::find($request->modalId);
-        $ListItem-> name = $request->modalName;
+    public function updateItem(Request $request, $id) {
+        $ListItem = ListItem::find($id);
+        $ListItem-> name = $request->description;
+        $ListItem-> end_date = $request -> endDate;
+        $ListItem-> end_time = $request -> endTime;
         $ListItem->save();
     
-        return redirect('/');
+        return  response()->json(['message' => 'Task updated successfully']);
     }
 
     public function deleteAll(){
         ListItem::truncate();
         
-        return redirect('/');
+        return  response()->json(['message' => 'Tasks Deleted successfully']);
     }
 
     public function completeAll()
     {
         ListItem::query()->update(['is_complete' => 1]);
 
-        return redirect('/');
+        return  response()->json(['message' => 'Tasks updated successfully']);
     }
 
 }

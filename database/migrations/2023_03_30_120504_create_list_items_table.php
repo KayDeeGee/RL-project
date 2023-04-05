@@ -15,10 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('is_complete');
-            $table->date('start_Date');
-            $table->time('start_Time');
-            $table->date('end_Date');
-            $table->time('end_Time');
+            $table->date('end_date');
+            $table->time('end_time');
             $table->timestamps();
         });
     }

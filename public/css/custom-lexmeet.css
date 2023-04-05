@@ -1,0 +1,113 @@
+:root {
+    --trans-dur: 0.5s;
+  }
+
+body {
+    background: #E1E1E1;
+
+}
+
+h1, h2, h3, h4, h5, p{
+    font-family: "Gotham Black", sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, h5 {
+    color: #808080;
+}
+
+button {
+    font-family: "Gotham Book", sans-serif;
+    font-weight: 400;
+}
+
+p {
+    font-size: 13px;
+    color: #f4512c;
+}
+
+.my-btn {
+    color: #f4512c;
+    background-color: white;
+    transition: color var(--trans-dur), background-color var(--trans-dur);
+}
+
+.my-btn:hover{
+    color: white;
+    background-color: #f4512c;
+}
+
+.marked {
+    color: white;
+    background-color: #f4512c;
+}
+
+.marked:hover {
+    background-color: #f4512c;
+    color: white;
+  }
+
+.icon-btn {
+    display:inline-block; 
+    font-size: 32px;
+    line-height:0;
+}
+
+.modal-header {
+    background: rgb(244,81,44);
+    background: -moz-linear-gradient(90deg, rgba(244,81,44,1) 0%, rgba(94,27,137,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(244,81,44,1) 0%, rgba(94,27,137,1) 100%);
+    background: linear-gradient(90deg, rgba(244,81,44,1) 0%, rgba(94,27,137,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4512c",endColorstr="#5e1b89",GradientType=1);
+}
+
+.btn-solid-primary-custom {
+    background-color: #f4512c;
+    border: 1px solid #f4512c;
+    color: white;
+    transition: color var(--trans-dur), border  var(--trans-dur), background-color var(--trans-dur);
+}
+
+.btn-solid-primary-custom:hover {
+    background-color: white;
+    border: 1px solid #f4512c;
+    color: #f4512c;
+}
+
+.btn-solid-secondary-custom {
+    background-color: #5E1B89;
+    border: 1px solid #5E1B89;
+    color: white;
+    transition: color var(--trans-dur), border  var(--trans-dur), background-color var(--trans-dur);
+}
+
+.btn-solid-secondary-custom:hover {
+    background-color: white;
+    border: 1px solid #5E1B89;
+    color: #5E1B89;
+}
+
+.btn-border-primary-custom {
+    border: 1px solid #f4512c;
+    background-color: white;
+    color: #f4512c;
+    transition: color var(--trans-dur);
+}
+
+.btn-border-primary-custom:hover {
+    background-color: #f4512c;
+    color: white;
+}
+
+.btn-border-secondary-custom {
+    border: 1px solid #5E1B89;
+    background-color: white;
+    color: #5E1B89;
+    transition: color var(--trans-dur), background-color var(--trans-dur);
+}
+
+.btn-border-secondary-custom:hover {
+    background-color: #5E1B89;
+    color: white;
+}
+
